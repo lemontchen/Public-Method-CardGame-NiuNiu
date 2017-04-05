@@ -2,7 +2,8 @@
 
     /**
 	 * 写入日志
-	 */
+	 * $word 需要写入的值 
+	*/
     public function log_result($word) {
         $fp = fopen(ROOT_PATH . "log/log.txt", "a");
         flock($fp, LOCK_EX);

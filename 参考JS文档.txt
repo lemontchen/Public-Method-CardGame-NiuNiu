@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>注册填写</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="format-detection" content="email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="/public/web/style/reset.css" />
+<link rel="stylesheet" href="/public/web/style/center.css" />	
+<link href="/public/web/style/upload.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+	<section>
+		<p class="worming">“您的所有信息将安全保密，不会泄露给第三方。为了确保我们对您的服务，请如实填写以下信息，谢谢您的合作！”</p>
+		<div class="inform-box">
+			<form enctype="multipart/form-data" id="postfrom" method="post" action="{:U('Portal/Index/postfrom')}">
+			<ul>
+				<li>
+					<div class="box-groupw">
+						<label for="">姓名</label>
+						<div class="input-box"><input type="text" id="name" name="name" placeholder="" value="{$userInfo['name']}"></div>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">年龄</label>
+						<div class="input-box"><input type="text" id="age" placeholder="" readonly="" value="{$userInfo['age']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>18-25</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>26-30</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>31-35</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>36-40</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>41-45 </span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>46-50</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>51-55</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>56-60</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>60以上</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">身高</label>
+						<div class="input-box"><input type="text" id="height" placeholder="" readonly="" value="{$userInfo['height']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>150cm以下</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>151cm-155cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>156cm-160cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>161cm-165cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>166cm-170cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>171cm-175cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>176cm-180cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>181cm-185cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>186cm-190cm</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>190cm以上</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">省市</label>
+						<div class="input-box-t" id="demo2">
+						
+						<empty name="userInfo['city']">
+							<div class="sss">
+								<select name="city" id="city" class="ckk"></select>
+								<span>市</span>
+							</div>
+							<div class="sss">
+								<select name="province" id="" class="ckk"></select>
+								<span>省</span>
+							</div>
+							<p id="place" style="display: none">回调值</p>
+						<else />
+							<div class="sss" style="color:#dd3863;width:28%">{$userInfo['city']}</div>
+						</empty>	
+						</div>
+						
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">职业</label>
+						<div class="input-box"><input type="text" id="profess" placeholder="" readonly="" value="{$userInfo['profess']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>学生</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>艺术</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>金融</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>行政</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>建筑</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>计算机硬件</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>计算机软件</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>教育</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>媒体</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>管理</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>服务业</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>法律</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>医疗</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>军事</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>政府</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>销售</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>科研</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>运输</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>失业</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>退休</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>其他</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">年收入</label>
+						<div class="input-box"><input type="text" id="income" placeholder="" readonly="" value="{$userInfo['income']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>小于$50K</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span> $50K-$75K</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>$75K-$100</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>$100K-$150K</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span> $150K-$300K</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>$300K以上</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">现居地</label>
+						<div class="input-box"><input type="text" id="nowin" placeholder="" readonly="" value="{$userInfo['nowin']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>新南威尔士州</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>维多利亚州</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>昆士兰州</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>西澳大利亚州</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>南澳大利亚州</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>中国澳洲两地</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">最高学历</label>
+						<div class="input-box"><input type="text" id="education" placeholder="" readonly="" value="{$userInfo['education']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>高中中专及以下</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>大专</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>本科</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>双学士</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>硕士</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>博士</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>博士后</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">房产</label>
+						<div class="input-box"><input type="text" id="house" placeholder="" readonly="" value="{$userInfo['house']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>无房</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>一房</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>两房</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>三房或以上</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">车辆</label>
+						<div class="small-check small-checkaa">
+							<dl id="car">
+								<dd <eq name="userInfo['car']" value="有车">class="on"</eq> <empty name="userInfo['car']">class="on"</empty>><input type="radio" name="car" id="" class="radio" value="有车" checked="checked"><span>有车</span></dd>
+								<dd <eq name="userInfo['car']" value="无车">class="on"</eq>><input type="radio" name="car" id="" class="radio" value="无车"><span>无车</span></dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">语言</label>
+						<div class="small-check languler small-checkbb">
+							<dl>
+								<dd <eq name="userInfo['language']" value="普通话">class="on"</eq> <empty name="userInfo['language']">class="on"</empty>><input type="radio" name="language" id="" value="普通话" class="radio" checked><span>普通话</span></dd>
+								<dd <eq name="userInfo['language']" value="粤语">class="on"</eq>><input type="radio" name="language" id="" value="粤语" class="radio"><span>粤语</span></dd>
+								<dd <eq name="userInfo['language']" value="其它">class="on"</eq>><input type="radio" name="language" id="" value="其它" class="radio"><span>其它</span></dd>
+							</dl>
+						</div>
+					</div>
+					
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">移民身份</label>
+						<div class="small-check address small-checkcc">
+							<dl>
+								<dd <eq name="userInfo['identity']" value="非永久居民">class="on"</eq> style="width: 90px;"><input type="radio" name="identity" id="" value="非永久居民" class="radio"><span>非永久居民</span></dd>
+								<dd <eq name="userInfo['identity']" value="永久居民/公民">class="on"</eq> <empty name="userInfo['identity']">class="on"</empty>><input type="radio" name="identity" id="" value="永久居民/公民" class="radio" checked><span>永久居民/公民</span></dd>
+							</dl>
+						</div>
+					</div>
+
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">生肖</label>
+						<div class="input-box"><input type="text" id="zodiac" placeholder="" readonly="" value="{$userInfo['zodiac']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>鼠</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>牛</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>虎</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>兔</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>龙</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>蛇</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>马</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>羊</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>猴</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>鸡</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>狗</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>猪</span></label></dd>
+
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">婚姻状况</label>
+						<div class="small-check small-checkdd">
+							<dl>
+								<dd <eq name="userInfo['marital']" value="未婚">class="on"</eq> <empty name="userInfo['marital']">class="on"</empty>><input type="radio" name="marital" value="未婚" id="" class="radio" checked><span>未婚</span></dd>
+								<dd <eq name="userInfo['marital']" value="离异">class="on"</eq>><input type="radio" name="marital" value="离异" id="" class="radio"><span>离异</span></dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">身材类型</label>
+						<div class="input-box"><input type="text" id="figure" placeholder="" readonly="" value="{$userInfo['figure']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>偏瘦</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>微胖</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>肥胖</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>运动型</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>平均</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">孩子</label>
+						<div class="input-box"><input type="text" id="child" placeholder="" readonly="" value="{$userInfo['child']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>有孩子</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>没有孩子，能接受生孩子</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>不能接受生孩子</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">烟</label>
+						<div class="small-check small-checkee">
+							<dl>
+								<dd style="width:60px" <eq name="userInfo['smoke']" value="不吸烟">class="on"</eq> <empty name="userInfo['smoke']">class="on"</empty>><input type="radio" name="smoke" value="不吸烟" id="" class="radio" checked><span>不吸烟</span></dd>
+								<dd <eq name="userInfo['smoke']" value="偶尔">class="on"</eq>><input type="radio" name="smoke" value="偶尔" id="" class="radio"><span>偶尔</span></dd>
+								<dd <eq name="userInfo['smoke']" value="经常">class="on"</eq>><input type="radio" name="smoke" value="经常" id="" class="radio"><span>经常</span></dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">酒</label>
+						<div class="small-check small-checkff">
+							<dl>
+								<dd style="width:60px" <eq name="userInfo['wine']" value="不喝酒">class="on"</eq> <empty name="userInfo['wine']">class="on"</empty>><input type="radio" name="wine" id="" value="不喝酒" class="radio" checked><span>不喝酒</span></dd>
+								<dd <eq name="userInfo['wine']" value="偶尔">class="on"</eq>><input type="radio" name="wine" id="" value="偶尔" class="radio"><span>偶尔</span></dd>
+								<dd <eq name="userInfo['wine']" value="经常">class="on"</eq>><input type="radio" name="wine" id="" value="经常" class="radio"><span>经常</span></dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">星座</label>
+						<div class="input-box"><input type="text" id="star" placeholder="" readonly="" value="{$userInfo['star']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>白羊座(3.21-4.20)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>金牛座(4.21-5.21)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>双子座(5.22-6.21)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>巨蟹座(6.22-7.22)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>狮子座(7.23-8.22)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>处女座(8.23-9.23)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>天秤座(9.24-10.23)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>天蝎座(10.24-11.22)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>射手座(11.23-12.21)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>摩羯座(12.22-1.20)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>水瓶座(1.21-2.19)</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>双鱼座(2.20-3.20)</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">宗教信仰</label>
+						<div class="input-box"><input type="text" id="religion" placeholder="" readonly="" value="{$userInfo['religion']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>佛教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>基督教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>犹太教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>天主教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>印度教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>伊斯兰教</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>不可知论</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>无神论</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>其它</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				
+				<!-- 5-17添加 -->
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 130px">您对感情的态度</label>
+						<div class="input-box" style="padding-left: 105px"><input id="attitude" type="text" placeholder="" readonly="" value="{$userInfo['attitude']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>我想要快速找到另一半</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>我希望尽快结婚</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>我很忙，但是我会腾出时间和另一半约会</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>我希望先交个朋友</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 165px">您希望约会次数有多频繁</label>
+						<div class="input-box" style="padding-left: 160px"><input id="number" type="text" placeholder="" readonly="" value="{$userInfo['number']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>每周</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>每两周</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>根据另一半的态度</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 230px">遇到心仪的他/她，您希望多久后结婚</label>
+						<div class="input-box" style="padding-left: 160px"><input id="heart" type="text" placeholder="" readonly="" value="{$userInfo['heart']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>3个月</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>半年</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>一年以上</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 150px">成功对您来说意味什么</label>
+						<div class="input-box" style="padding-left: 150px"><input id="succeed" type="text" placeholder="" readonly="" value="{$userInfo['succeed']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>金钱富裕</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>知心好友，美满家庭</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>身体健康</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 150px">您是一个浪漫主义者吗</label>
+						<div class="input-box" style="padding-left: 150px"><input id="romantic" type="text" placeholder="" readonly="" value="{$userInfo['romantic']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>是</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>不是</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>偶尔</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 170px">您对另一半的回应有多快呢</label>
+						<div class="input-box" style="padding-left: 150px"><input id="quick" type="text" placeholder="" readonly="" value="{$userInfo['quick']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>迅速</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>正常</span></label></dd>
+							<dd><label for=""><input type="radio" id="" class="checkdou"><span>一般</span></label></dd>
+							
+						</dl>
+					</div>
+				</li>
+				<!-- 结束 -->
+				
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 130px;">兴趣爱好（可多选）</label>
+						<div class="input-box check-boxs"><input type="text" id="interest" placeholder="" readonly="" value="{$userInfo['interest']}" class="txtValue"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden double">
+						<dl>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>钓鱼</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>篮球</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>购物</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>桌游</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>露营</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>旅游</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>游泳</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>网球</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>高尔夫</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>电影</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>阅读</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>滑雪</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>健身</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>跑步</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>其他</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="" style="width: 100px;">性格（可多选）</label>
+						<div class="input-box check-boxs"><input type="text" id="character" placeholder="" readonly="" value="{$userInfo['character']}" class="txtValue1"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden double1">
+						<dl>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>开放</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>随和</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>节俭</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>豪爽</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>浪漫</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>传统</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>忍耐</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>前卫</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>多面</span></label></dd>
+							<dd><label for=""><input type="checkbox" id="" class="checkdou"><span>羞涩</span></label></dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="box-group">
+						<label for="">联系方式</label>
+						<div class="input-box"><input type="text" id="contact" placeholder="" readonly="" value="{$userInfo['contact']}"></div>
+						<i class="jt-icon"><img src="/public/web/images/jt.png" alt=""></i>
+					</div>
+					<div class="hidden dan">
+						<dl>
+							<dd style="width: 100%"><label for=""><input type="radio" id="" class="checkdou"><span>微信</span></label></dd>
+							<dd style="width: 100%"><label for=""><input type="radio" id="" class="checkdou"><span>邮箱</span></label></dd>
+							<dd style="width: 100%" id="phone"><label for=""><input type="radio" id="" class="checkdou"><span>手机号码</span></label></dd>
+						</dl>
+						<div class="hede-text" style="display:block">
+							<input type="text" name="way" id="way" placeholder="请输入相关号码" value="{$userInfo['way']}">
+						</div>
+					</div>
+				</li>
+				<li style="border-bottom: none">
+					<div class="box-group up-dd"><label for="">图片上传</label></div>
+					<div class="upload_box">
+						<notempty name="userInfo">
+						<notempty name="headimg">
+						<volist name="headimg" id="vo">
+						<div class="uploader-list" id="output">
+							<div class="fileItem">
+								<img src="{$vo['img']}" style="width: 82px; height: 82px;">
+							</div>
+						</div>
+						</volist>
+						</notempty>
+						</notempty>
+						<empty name="userInfo">
+					  	<div class="uploader-list" id="output"></div>
+					  	<div id="addpic" style="float:left;">
+					    	<input type="file" name="files[]" accept="image/*">
+					  	</div>
+					  	<p class="ctrl-desc"><span id="errMsg"></span></p>
+					  	</empty>
+					</div>
+				</li>
+				
+				<input type="hidden" name="age" id="ageone" value="">
+				<input type="hidden" name="height" id="heightone" value="">
+				<input type="hidden" name="profess" id="professone" value="">
+				<input type="hidden" name="income" id="incomeone" value="">
+				<input type="hidden" name="nowin" id="nowinone" value="">
+				<input type="hidden" name="neducation" id="neducationone" value="">
+				<input type="hidden" name="house" id="houseone" value="">
+				<input type="hidden" name="carone" id="carone" value="">
+				<input type="hidden" name="languageone" id="languageone" value="">
+				<input type="hidden" name="identityone" id="identityone" value="">
+				<input type="hidden" name="zodiac" id="zodiacone" value="">
+				<input type="hidden" name="maritalone" id="maritalone" value="">
+				<input type="hidden" name="figure" id="figureone" value="">
+				<input type="hidden" name="child" id="childone" value="">
+				<input type="hidden" name="smokeone" id="smokeone" value="">
+				<input type="hidden" name="wineone" id="wineone" value="">
+				<input type="hidden" name="star" id="starone" value="">
+				<input type="hidden" name="religion" id="religionone" value="">
+				<input type="hidden" name="interest" id="interestone" value="">
+				<input type="hidden" name="character" id="characterone" value="">
+				<input type="hidden" name="contact" id="contactone" value="">
+				
+				<input type="hidden" name="attitude" id="attitudeone" value="">
+				<input type="hidden" name="number" id="numberone" value="">
+				<input type="hidden" name="heart" id="heartone" value="">
+				<input type="hidden" name="succeed" id="succeedone" value="">
+				<input type="hidden" name="romantic" id="romanticone" value="">
+				<input type="hidden" name="quick" id="quickone" value="">
+				
+				<empty name="userInfo">
+				<button type="submit" class="btn-sub" id="btn-from">确认提交</button>
+				</empty>
+				
+			</ul>
+			</form>
+		</div>
+	</section>
+</body>
+<script src="/public/web/js/jquery-2.1.1.min.js"></script>
+<script src="/public/web/js/zepto.min.js"></script>
+<!-- 上传 -->
+<script src="/public/web/js/upload.js" type="text/javascript"></script>
+<!-- 城市 -->
+<script type="text/javascript" src="/public/web/js/jquery.citys.js"></script>
+<script src="/public/web/layer/layer.js"></script>
+<script>
+	// 地址联动
+	$('#demo2').citys({
+	    required:false,
+	    nodata:'disabled',
+	    onChange:function(data){
+	        var text = data['direct']?'(直辖市)':'';
+	        $('#place').text('当前选中地区：'+data['province']+text+' '+data['city']);
+	    }
+	});
+	
+
+	// 点击展开
+
+	$('.inform-box li').on('click','.box-group',function(event){
+		 $(this).parents('li').find('.hidden').slideToggle(50);
+		 $(this).find('.jt-icon').toggleClass('on');
+		 return false;
+	})
+	// 单选
+	$('.dan').on('click','dd',function(){
+		var Val = $(this).find('span').html();
+		$(this).addClass('on').siblings('dd').removeClass('on')
+		if($(this).hasClass('on')){
+			$(this).parents('li').find('.input-box input').val(Val);
+			
+		};
+		/* if($('#phone').hasClass('on')){
+			$('.hede-text').show();
+		}
+		else{
+			$('.hede-text').hide();
+		} */
+	})
+	// 多选
+$(function(){
+	var count = 0;
+	$(".double :checkbox").click(function(){
+		var textvalue = $(this).parents('dd').find('span').text();
+		$(this).parents('dd').toggleClass('on');
+		if ($(".txtValue").val() == ""){
+			if ($(this).is(':checked')){
+				var txtalso = $.trim(textvalue);
+			} else {
+				var txtalso = "";
+			}
+		}
+		else {
+			if ($(this).is(':checked')){
+				var txtalso = $.trim($(".txtValue").val()) + "," + $.trim(textvalue);
+			}
+			else {
+				var txtelse = $(".txtValue").val();
+				var txtnow = textvalue;
+				var reg1 = "," + txtnow;
+				var reg2 = txtnow + ",";
+				var reg3 = txtnow;
+				var txtelse = txtelse.replace(reg1, "").replace(reg2, "").replace(reg3, "");
+				var txtalso = txtelse;
+			}
+		}
+		$(".txtValue").val(txtalso);
+		count++;
+
+	});
+
+});
+
+$(function(){
+	var count = 0;
+	$(".double1 :checkbox").click(function(){
+		var textvalue = $(this).parents('dd').find('span').text();
+		$(this).parents('dd').toggleClass('on');
+		if ($(".txtValue1").val() == ""){
+			if ($(this).is(':checked')){
+				var txtalso = $.trim(textvalue);
+			} else {
+				var txtalso = "";
+			}
+		}
+		else {
+			if ($(this).is(':checked')){
+				var txtalso = $.trim($(".txtValue1").val()) + "," + $.trim(textvalue);
+			}
+			else {
+				var txtelse = $(".txtValue1").val();
+				var txtnow = textvalue;
+				var reg1 = "," + txtnow;
+				var reg2 = txtnow + ",";
+				var reg3 = txtnow;
+				var txtelse = txtelse.replace(reg1, "").replace(reg2, "").replace(reg3, "");
+				var txtalso = txtelse;
+			}
+		}
+		$(".txtValue1").val(txtalso);
+		count++;
+
+	});
+
+});
+	// var arr = [];
+	// $('.double').on('click','dd',function(){
+	// 	var Val = $(this).find('span').html();
+	// 	var putVal = $(this).parents('li').find('.input-box input');
+	// 	$(this).toggleClass('on');
+	// 		if($(this).hasClass('on')){
+	// 			arr.push(Val);
+	// 		}else{
+	// 			arr.pop(Val);
+	// 		}
+	// 		putVal.val(arr);
+	// 		console.log(arr);
+	// })
+
+	// var arr1 = [];
+	// $('.double1').on('click','dd',function(){
+	// 	var Val = $(this).find('span').html();
+	// 	var putVal = $(this).parents('li').find('.input-box input');
+	// 	$(this).toggleClass('on');
+	// 		if($(this).hasClass('on')){
+	// 			arr1.push(Val);
+	// 		}else{
+	// 			arr1.splice(Val);
+	// 		}
+	// 		putVal.val(arr1);
+	// 		console.log(arr1);
+	// })
+	// 圈圈单选
+	/* $('.small-checkaa').on('click','dd',function(){
+		$(this).addClass('on').siblings('dd').removeClass('on');
+		$('.small-checkaa').find("dd").each(function(){
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				$(this).find('input').attr("checked",true);
+				console.log(Html);
+			}else {
+				$(this).find('input').attr("checked",false);
+			}
+		}); */
+		
+		$('.small-checkaa').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#carone').val(Html);
+			}
+		});
+		$('.small-checkbb').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#languageone').val(Html);
+			}
+		});
+		$('.small-checkcc').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#identityone').val(Html);
+			}
+		});
+		$('.small-checkdd').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#maritalone').val(Html);
+			}
+		});
+		$('.small-checkee').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#smokeone').val(Html);
+			}
+		});
+		$('.small-checkff').on('click','dd',function(){
+			$(this).addClass('on').siblings('dd').removeClass('on');
+			if($(this).hasClass('on') == true){
+				var Html = $(this).find('span').html();
+				console.log(Html);
+				$('#wineone').val(Html);
+			}
+		});
+		
+	//提交
+	$('#btn-from').click(function(){
+		//姓名获取
+        var name = $('#name').val();
+        if($.trim(name) == ''){
+            layer.msg('请填写姓名！', {icon: 5});
+            return false;
+        }
+        //年龄
+        var age = $('#age').val();
+        if($.trim(age) == ''){
+            layer.msg('请选择年龄！', {icon: 5});
+            return false;
+        } else {
+        	$('#ageone').val(age);
+        }
+        //身高height
+        var height = $('#height').val();
+        if($.trim(height) == ''){
+            layer.msg('请选择身高！', {icon: 5});
+            return false;
+        } else {
+        	$('#heightone').val(height);
+        }
+        //省市city
+        var city = $('#city').val();
+        if($.trim(city) == ''){
+            layer.msg('请选择省市！', {icon: 5});
+            return false;
+        }
+        //职业profess
+        var profess = $('#profess').val();
+        if($.trim(profess) == ''){
+            layer.msg('请选择职业！', {icon: 5});
+            return false;
+        } else {
+        	$('#professone').val(profess);
+        }
+        //年收入income
+        var income = $('#income').val();
+        if($.trim(income) == ''){
+            layer.msg('请选择年收入！', {icon: 5});
+            return false;
+        } else {
+        	$('#incomeone').val(income);
+        }
+        //现居地nowin
+        var nowin = $('#nowin').val();
+        if($.trim(nowin) == ''){
+            layer.msg('请选择现居地！', {icon: 5});
+            return false;
+        } else {
+        	$('#nowinone').val(nowin);
+        }
+        //最高学历education
+        var education = $('#education').val();
+        if($.trim(education) == ''){
+            layer.msg('请选择最高学历！', {icon: 5});
+            return false;
+        } else {
+        	$('#neducationone').val(education);
+        }
+        //房产house
+        var house = $('#house').val();
+        if($.trim(house) == ''){
+            layer.msg('请选择房产！', {icon: 5});
+            return false;
+        } else {
+        	$('#houseone').val(house);
+        }
+        //车辆car
+        var car = $("input[name=car]:checked").val();
+        var carone = $('#carone').val();
+        if ($.trim(carone) == '') {
+        	$('#carone').val(car);
+        }
+        //语言language
+        var language = $("input[name=language]:checked").val();
+        var languageone = $('#languageone').val();
+        if ($.trim(languageone) == '') {
+        	$('#languageone').val(language);
+        }
+        //移民身份identity
+        var identity = $("input[name=identity]:checked").val();
+        var identityone = $('#identityone').val();
+        if ($.trim(identityone) == '') {
+        	$('#identityone').val(identity);
+        }
+        //生肖zodiac
+        var zodiac = $('#zodiac').val();
+        if($.trim(zodiac) == ''){
+            layer.msg('请选择生肖！', {icon: 5});
+            return false;
+        } else {
+        	$('#zodiacone').val(zodiac);
+        }
+        //婚姻状况marital
+        var marital = $("input[name=marital]:checked").val();
+        var maritalone = $('#maritalone').val();
+        if ($.trim(maritalone) == '') {
+        	$('#maritalone').val(marital);
+        }
+        //身材类型figure
+        var figure = $('#figure').val();
+        if($.trim(figure) == ''){
+            layer.msg('请选择身材类型！', {icon: 5});
+            return false;
+        } else {
+        	$('#figureone').val(figure);
+        }
+        //孩子child
+        var child = $('#child').val();
+        if($.trim(child) == ''){
+            layer.msg('请选择孩子属性！', {icon: 5});
+            return false;
+        } else {
+        	$('#childone').val(child);
+        }
+        //烟smoke
+        var smoke = $("input[name=smoke]:checked").val();
+        var smokeone = $('#smokeone').val();
+        if ($.trim(smokeone) == '') {
+        	$('#smokeone').val(smoke);
+        }
+        //酒wine
+        var wine = $("input[name=wine]:checked").val();
+        var wineone = $('#wineone').val();
+        if ($.trim(wineone) == '') {
+        	$('#wineone').val(wine);
+        }
+        //星座star
+        var star = $('#star').val();
+        if($.trim(star) == ''){
+            layer.msg('请选择星座！', {icon: 5});
+            return false;
+        } else {
+        	$('#starone').val(star);
+        }
+        //宗教信仰religion
+        var religion = $('#religion').val();
+        if($.trim(religion) == ''){
+            layer.msg('请选择宗教信仰！', {icon: 5});
+            return false;
+        } else {
+        	$('#religionone').val(religion);
+        }
+        //-----------
+        //您对感情的态度attitude
+        var attitude = $('#attitude').val();
+        if($.trim(attitude) == ''){
+            layer.msg('请选择您对感情的态度！', {icon: 5});
+            return false;
+        } else {
+        	$('#attitudeone').val(attitude);
+        }
+        //您希望约会次数有多频繁number
+        var number = $('#number').val();
+        if($.trim(number) == ''){
+            layer.msg('请选择您希望约会次数有多频繁！', {icon: 5});
+            return false;
+        } else {
+        	$('#numberone').val(number);
+        }
+        //遇到心仪的他/她，您希望多久后结婚heart
+        var heart = $('#heart').val();
+        if($.trim(heart) == ''){
+            layer.msg('请选择遇到心仪的他/她，您希望多久后结婚！', {icon: 5});
+            return false;
+        } else {
+        	$('#heartone').val(heart);
+        }
+        //成功对您来说意味什么succeed
+        var succeed = $('#succeed').val();
+        if($.trim(succeed) == ''){
+            layer.msg('请选择成功对您来说意味什么！', {icon: 5});
+            return false;
+        } else {
+        	$('#succeedone').val(succeed);
+        }
+        //您是一个浪漫主义者吗romantic
+        var romantic = $('#romantic').val();
+        if($.trim(romantic) == ''){
+            layer.msg('请选择您是一个浪漫主义者吗！', {icon: 5});
+            return false;
+        } else {
+        	$('#romanticone').val(romantic);
+        }
+        //您对另一半的回应有多快呢quick
+        var quick = $('#quick').val();
+        if($.trim(quick) == ''){
+            layer.msg('请选择您对另一半的回应有多快呢！', {icon: 5});
+            return false;
+        } else {
+        	$('#quickone').val(quick);
+        }
+        //------------
+        //兴趣爱好(可多选)interest
+        var interest = $('#interest').val();
+        if($.trim(interest) == ''){
+            layer.msg('请选择兴趣爱好！', {icon: 5});
+            return false;
+        } else {
+        	$('#interestone').val(interest);
+        }
+        //性格(可多选)character
+        var character = $('#character').val();
+        if($.trim(character) == ''){
+            layer.msg('请选择性格！', {icon: 5});
+            return false;
+        } else {
+        	$('#characterone').val(character);
+        }
+        //联系方式contact
+        var contact = $('#contact').val();
+        if($.trim(contact) == ''){
+            layer.msg('请选择联系方式！', {icon: 5});
+            return false;
+        } else {
+        	$('#contactone').val(contact);
+        }
+        //联系详情way
+        var way = $('#way').val();
+        if($.trim(way) == ''){
+            layer.msg('请填写联系号码！', {icon: 5});
+            return false;
+        }
+        
+        
+        //
+        //var emReg = /^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/;
+        //var phoneReg = /^1[3,5,8,7]\d{9}$/;
+        /* 
+       	if (contact == '微信') {
+       		var wxReg = /^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}+$/;
+       		if(wxReg.test(way) == false) {
+       			layer.msg('请输入格式正确的微信！', {icon: 5});
+	            return false;
+            } 
+       	} else if ($.trim(contact) == '邮箱') {
+			if(!emReg.test(way)){
+				layer.msg('请输入格式正确的邮箱！', {icon: 5});
+                return false;
+            }
+       	} else if ($.trim(contact) == '手机号码') {
+       		if(!phoneReg.test(way)){
+       			layer.msg('请输入格式正确的手机号！', {icon: 5});
+                return false;
+            }
+       	} */
+        
+        //图片headimg
+       	var output = $('.sumnumber').size();
+       	if(output < 2) {
+            layer.msg('请上传最少2张,最多4张个人照片！', {icon: 5});
+            return false;
+        } else if (output > 4) {
+        	layer.msg('请上传最少2张,最多4张个人照片！', {icon: 5});
+            return false;
+        }
+        $('#postfrom').submit();
+
+	});
+	
+</script>
+</html>

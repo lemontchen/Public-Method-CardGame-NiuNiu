@@ -1,14 +1,19 @@
 <?php
 
     /**
-	 * 写入日志
-	 * $word 需要写入的值 
-	*/
+      * 写入日志
+      * $word 需要写入的值 
+      */
     public function log_result($word) {
+	    //打开文件
         $fp = fopen(ROOT_PATH . "log/log.txt", "a");
+	    //锁
         flock($fp, LOCK_EX);
+	    //写
         fwrite($fp, "执行日期：" . strftime("%Y%m%d%H%M%S", time()) . "\n" . $word . "\n\n");
+	    //开锁
         flock($fp, LOCK_UN);
+	    //关闭
         fclose($fp);
     }
 
